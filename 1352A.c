@@ -9,7 +9,7 @@ int main()
         int round_value[5];  
         int count = 0;
 
-        
+       
         while (x > 0) {
             int digit = x % 10;
             if (digit > 0) {
@@ -21,7 +21,7 @@ int main()
 
        
         printf("%d\n", count);
-        for (i = 0; i < count; i++) {
+        for (i = count - 1; i >= 0; i--) {  
             printf("%d ", round_value[i]);
         }
         printf("\n");
