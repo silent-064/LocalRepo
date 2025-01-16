@@ -1,26 +1,12 @@
-#include<stdio.h>
-int main()
-{
- int a,b,x;
- int temp=0;
- scanf("%d %d" ,&a ,&b);
- while(a--)
- {
-scanf("%d" ,&x);
-if(x<=b)
-{
- temp+=1;   
-} 
-else if(x>b)
-{
-    temp+=2;
-}
+#include <stdio.h>
 
- }
-printf("%d",temp);
-
-
-
+int main() {
+    long long a;
+    double b;
+    scanf("%lld %lf", &a, &b);
+    long long c = (long long)(b * 100 + 0.5);
+    long long result = (a * c) / 100;
+    printf("%lld\n", result);
 
     return 0;
 }
