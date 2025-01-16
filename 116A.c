@@ -17,7 +17,7 @@ if(current_passengers > max_passenger)
 }
 
 }
-printf("%d",max_passenger);
+printf("%d\n",max_passenger);
 
 
 
