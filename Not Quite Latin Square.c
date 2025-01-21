@@ -2,9 +2,9 @@
 
 int main() {
     int t;
-    scanf("%d", &t); 
+    scanf("%d", &a); 
 
-    while (t--) {
+    while (a--) {
         char grid[3][4]; 
         int row, col; 
 
