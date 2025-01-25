@@ -1,14 +1,14 @@
 #include<stdio.h>
 int main()
 {
-int a,i,count=0;
+int a,i;
 scanf("%d" ,&a);
 while(a--)
 {
 int x;
 scanf("%d" ,&x);
 int y[x];
-int found=0,max;
+int found=0,max=0,count=0;
 for(i=0; i<x; i++)
 {
     scanf("%d" ,&y[i]);
