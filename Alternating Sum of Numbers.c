@@ -25,7 +25,7 @@ while(a--)
             sum-=array[i];
         }
     }
-    printf("%d" ,sum);
+    printf("%d\n" ,sum);
 }
 
 
