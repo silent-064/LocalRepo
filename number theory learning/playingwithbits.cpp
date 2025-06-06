@@ -18,8 +18,27 @@ void printBinary(int num) {
     cout << endl;
 }
 int main() {
-    ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);  // 1001
     cin.tie(NULL);
     cout.tie(NULL);
     printBinary(9);
+    int a = 9;
+    int i = 3;
+    if ((a & (1 << i)) != 0)
+        cout << "set bit" << endl;
+    else
+        cout << "not set bit" << endl;
+    // bit set
+    printBinary(a | (1 << 1));
+    // unbit set
+    printBinary(a & ~((1 << 3)));
+    // toggle
+    printBinary(a ^ ((1 << 2)));
+    // count
+    int cnt = 0;
+    for (i = 31; i >= 0; i--) {
+        if ((a & (1 << i)) != 0) cnt++;
+    }
+    cout << cnt;
+    cout << __builtin_popcount(a) << endl;
 }
