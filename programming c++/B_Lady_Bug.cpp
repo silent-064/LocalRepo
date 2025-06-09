@@ -17,23 +17,25 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int a, i;
+    int a, i, s[2];
     cin >> a;
-    int b;
-
     while (a--) {
+        int b, cnt = 0, acnt = 0;
         cin >> b;
 
-        if (b == 3) {
-            cout << "2 3 1" << endl;
+        string s1, s2;
+        cin >> s1 >> s2;
+        s[0] = s[1] = 0;
+        for (int i = 0; i < b; i++) {
+            int x = i % 2;
+            if (s1[i] == '0') s[x]++;
+            if (s2[i] == '0') s[!x]++;
         }
 
-        else {
-            cout << "2 3 " << b << " ";
-            for (i = 4; i <= b - 1; i++) {
-                cout << i << " ";
-            }
-            cout << "1" << endl;
-        }
+        if (s[0] < (b + 1) / 2 || s[1] < b / 2)
+            no;
+        else
+            yes;
     }
+    return 0;
 }

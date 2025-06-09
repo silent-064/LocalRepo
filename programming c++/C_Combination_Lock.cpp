@@ -1,6 +1,6 @@
 /*
  * Author : Protic Prappo Durjoy
- * Date :
+ * Date :9/6/25
  */
 #include <bits/stdc++.h>
 #define endl "\n"
@@ -23,17 +23,15 @@ int main() {
 
     while (a--) {
         cin >> b;
-
-        if (b == 3) {
-            cout << "2 3 1" << endl;
+        if (b % 2 == 0) {
+            cout << -1 << endl;
         }
 
         else {
-            cout << "2 3 " << b << " ";
-            for (i = 4; i <= b - 1; i++) {
+            for (i = b; i > 0; i--) {
                 cout << i << " ";
             }
-            cout << "1" << endl;
+            cout << endl;
         }
     }
 }

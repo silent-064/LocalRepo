@@ -16,24 +16,31 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
     int a, i;
     cin >> a;
-    int b;
 
     while (a--) {
+        int b;
         cin >> b;
+        vector<int> store(b);
+        ll maxiu = 0;
 
-        if (b == 3) {
-            cout << "2 3 1" << endl;
+        for (i = 0; i < b; i++) {
+            cin >> store[i];
         }
 
-        else {
-            cout << "2 3 " << b << " ";
-            for (i = 4; i <= b - 1; i++) {
-                cout << i << " ";
+        for (i = 0; i < b; i++) {
+            vector<int> temp = store;
+            temp[i] += 1;
+
+            ll mul = 1;
+            for (int j = 0; j < b; j++) {
+                mul *= temp[j];
             }
-            cout << "1" << endl;
+
+            maxiu = max(maxiu, mul);
         }
+
+        cout << maxiu << endl;
     }
 }
