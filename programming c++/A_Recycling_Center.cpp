@@ -18,11 +18,5 @@ int main() {
     int a, i;
     cin >> a;
     while (a--) {
-        ll b;
-        cin >> b;
-        string ch;
-        cin >> ch;
-        for (i = 0; i < b; i++) {
-            if (ch[i] == 'a' || ch[i] == 'a' ||) }
     }
 }

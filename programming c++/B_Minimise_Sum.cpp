@@ -20,9 +20,11 @@ int main() {
     while (a--) {
         ll b;
         cin >> b;
-        string ch;
-        cin >> ch;
+        vector<ll> x(b);
         for (i = 0; i < b; i++) {
-            if (ch[i] == 'a' || ch[i] == 'a' ||) }
+            cin >> x[i];
+        }
+        ll sum = x[0] + min(x[0], x[1]);
+        cout << sum << endl;
     }
 }
