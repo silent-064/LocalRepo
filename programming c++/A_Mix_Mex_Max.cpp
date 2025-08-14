@@ -5,7 +5,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 const long long int mod = 1000000007;
-#define int long long int
 #define ll long long
 #define fr(n, v)            \
     vector<long long> v(n); \
@@ -36,12 +35,31 @@ const long long int mod = 1000000007;
 #define pair(v)                                                    \
     for (auto it : v) cout << it.first << " " << it.second << ","; \
     cout << endl;
-#define yes cout << "YES" << endl;
-#define no cout << "NO" << endl;
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
 #define iss(v) is_sorted(v.begin(), v.end());
 #define mini(v) *min_element(v.begin(), v.end())
 #define maxi(v) *max_element(v.begin(), v.end())
 #define sm(v) accumulate(v.begin(), v.end(), 0LL);
+void solve() {
+    ll n;
+    cin >> n;
+    fr(n, v);
+    map<ll, ll> mp;
+    for (auto it : v)
+        if (it != -1) mp[it]++;
+    ll k = mp.size();
+    for (auto it : v) {
+        if (it == 0) {
+            no;
+            return;
+        }
+    }
+    if (k == 0 || k == 1)
+        yes;
+    else
+        no;
+}
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -49,18 +67,6 @@ int main() {
     int a, i;
     cin >> a;
     while (a--) {
-        ll n;
-        cin >> n;
-        fr(n, v);
-        map<ll, ll> mp;
-        for (auto it : v)
-            if (it != -1) mp[it]++;
-        ll k = mp.size();
-        for (auto it : v) {
-            if (it == 0) {
-                no return;
-            }
-        }
-        if (k == 0 || k == 1) yes else no
+        solve();
     }
 }

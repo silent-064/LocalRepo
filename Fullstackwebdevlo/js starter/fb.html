@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Durjobook — Login</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#f0f2f5;--card:#ffffff;--accent:#4285F4;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
+    body{background:var(--bg);display:flex;align-items:center;justify-content:center;height:100vh}
+    .container{max-width:400px;width:100%;padding:20px;background:var(--card);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);text-align:center}
+    h1{color:var(--accent);margin-bottom:20px}
+    input{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;font-size:16px}
+    button{width:100%;padding:12px;background:var(--accent);color:white;font-size:16px;border:none;border-radius:8px;cursor:pointer}
+    button:hover{background:#3367d6}
+    .footer{margin-top:14px;font-size:14px;color:#555}
+    .footer a{color:var(--accent);text-decoration:none}
+    .google-btn{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px;background:white;color:#555;border:1px solid #ddd;font-size:16px;padding:10px;border-radius:8px;cursor:pointer}
+    .google-btn:hover{background:#f7f7f7}
+    .google-icon{width:20px;height:20px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Durjobook</h1>
+    <input type="text" id="email" placeholder="Email or phone number" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="loginBtn">Log In</button>
+    <div class="google-btn" id="googleLogin">
+      <img class="google-icon" src="https://www.svgrepo.com/show/355037/google.svg" alt="Google logo" />
+      Continue with Google
+    </div>
+    <div class="footer">
+      <a href="#">Forgotten password?</a>
+    </div>
+  </div>
+  <script>
+    document.getElementById('loginBtn').addEventListener('click', ()=>{
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      if(!email || !password){
+        alert('Please fill in both fields');
+        return;
+      }
+      alert(`Logging in as ${email}`);
+    });
+
+    document.getElementById('googleLogin').addEventListener('click', ()=>{
+      alert('Redirecting to Google login...');
+      // Replace with actual Google OAuth redirect
+      // window.location.href = '/auth/google';
+    });
+  </script>
+</body>
+</html>
