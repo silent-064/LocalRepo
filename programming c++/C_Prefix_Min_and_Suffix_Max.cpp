@@ -3,7 +3,6 @@
  * Date :
  */
 #include <bits/stdc++.h>
-using namespace std;
 #define endl "\n"
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
@@ -13,16 +12,7 @@ using namespace std;
 #define ll long long
 const ll INF = 1e9 + 7;
 const ll mod = 998244353;
-ll gcd(ll a,ll b) {
-a=abs(a);
-    b=abs(b);
-    while (b != 0) {
-        ll r = a % b;
-        a = b;
-        b = r;
-    }
-    return a; 
-}
+using namespace std;
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -31,20 +21,32 @@ int main()
     int a, i;
     cin >> a;
     while (a--)
+    {ll b;
+        cin>>b;
+vector<ll>x(b),pre(b),suff(b);
+for(i=0; i<b; i++){
     {
-ll b,c,d,gosa,a1,a2;
-cin>>b>>c>>d;
-gosa=gcd(b,c);
-a1=(b/gosa);
-a2=(c/gosa);
-if(a1<=d && a2<=d){
-    cout<<1<<endl;
+        cin>>x[i];
+    }
 }
-else{
-    cout<<2<<endl;
+string sh="";
+suff[0]=x[0];
+pre[b-1]=x[b-1];
+for(i=1; i<b; i++){
+suff[i]=min(suff[i-1],x[i]);    
 }
-
-
+for(i=b-2; i>=0; i--){
+pre[i]=max(pre[i+1],x[i]);    
+}
+for(i=0; i<b; i++){
+    if(suff[i]<x[i] && pre[i]>x[i]){
+        sh+='0';
+    }
+    else{
+        sh+='1';
+    }
+}
+cout<<sh<<endl;
 
 
     }

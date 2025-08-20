@@ -8,35 +8,25 @@
 #define no cout << "NO\n"
 #define ft float
 #define du double
-#define ll long long
 #define ull unsigned long long
-using namespace std;
+#define ll long long
 const ll INF = 1e9 + 7;
 const ll mod = 998244353;
-void solve(){
-    ll a, i,d;
-    cin >> a;
-    ll x=a;
-    vector<ll>dp(a+1,INF);
-    dp[0]=0;
-    for(i=1; i<=a; i++)
-    {
-        ll x=i;
-       while(x>0){
-        d=a%10;
-        a=a/10;
-        if(d>0){
-            dp[i]=min(dp[i],1+dp[i-d]);
-        }
-    } 
-    }
-    cout<<dp[a];
-    
-}
+using namespace std;
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    solve();
+    int a, i;
+    cin >> a;
+    i=1;
+    while (a--)
+    {
+cout<<i<<" Sorry Divai.."<<endl;
+i++;
+
+
+
+    }
 }

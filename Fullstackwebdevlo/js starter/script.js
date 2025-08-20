@@ -10,7 +10,7 @@
 //ternary operator
 var alerting=alert('Fuck you');
 console.log(alerting);
-var age=prompt('your age');
+var age=prompt('sex..?');
 age<56?console.log('You can not enter the house'):console.log('You can enter the house')
 var number=1;
 while(number<67)
