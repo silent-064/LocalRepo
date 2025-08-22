@@ -13,19 +13,50 @@
 const ll INF = 1e9 + 7;
 const ll mod = 998244353;
 using namespace std;
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+
     int a, i;
     cin >> a;
     while (a--)
     {
+        ll b, j;
+        cin >> b;
+        ll arr[b+1][b+1];
+        for(i=1; i<=b; i++){
+            for(j=1; j<=b; j++){
+                cin >> arr[i][j];
+            }
+        }
 
+        ll ans = 0;
+        for(int diff = -(b-1); diff <= (b-1); diff++){
+            ll minu = 0;
+            bool count = false;
 
+            for(i=1; i<=b; i++){
+                j = i - diff;
+                if(j>=1 && j<=b){
+                    if(arr[i][j] < 0){
+                        if(!count){
+                            minu = arr[i][j];
+                            count = true;
+                        } else {
+                            minu = min(minu, arr[i][j]);
+                        }
+                    }
+                }
+            }
 
+            if(count){
+                ans += abs(minu);
+            }
+        }
 
-
+        cout << ans << endl;
     }
 }
