@@ -20,43 +20,12 @@ int main()
     cout.tie(NULL);
     int a,b, i;
     cin >> a>>b;
-    bool ans=true;
-//  while(b--)
-//  {
-//     ll x,y;
-//     cin>>x>>y;
-//     if(a>x)
-//     {
-//         a+=y;
-//     }
-//     else{
-// ans=false;
-// break;
-//     }
-
-//  }
-vector<pair<ll,ll>>v(b);
-for(i=0; i<b; i++)
-{
-    ll x,y;
-    cin>>x>>y;
-    v[i]={x,y};
-
-}
-sort(v.begin(),v.end());
-for(auto &it:v)
-{
-    if(a>it.first)
-    {
-        a+=it.second;
+    int minu=min(a,b);
+    if(minu%2==0){
+        cout<<"Malvika";
     }
     else{
-        ans=false;
+        cout<<"Akshat";
     }
-
-}
- if(ans)yes;
- else no;
-    
    
 }

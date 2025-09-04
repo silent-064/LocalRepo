@@ -20,43 +20,17 @@ int main()
     cout.tie(NULL);
     int a,b, i;
     cin >> a>>b;
-    bool ans=true;
-//  while(b--)
-//  {
-//     ll x,y;
-//     cin>>x>>y;
-//     if(a>x)
-//     {
-//         a+=y;
-//     }
-//     else{
-// ans=false;
-// break;
-//     }
-
-//  }
-vector<pair<ll,ll>>v(b);
-for(i=0; i<b; i++)
-{
-    ll x,y;
-    cin>>x>>y;
-    v[i]={x,y};
-
-}
-sort(v.begin(),v.end());
-for(auto &it:v)
-{
-    if(a>it.first)
+    vector<ll>x(a);
+    for(i=0; i<a; i++)
+    {ll y;
+        cin>>y;
+        x[i]=y;
+    }
+    sort(x.begin(),x.end());
+    ll sum=0;
+    for(i=0; x[i]<=0 && i<b; i++)
     {
-        a+=it.second;
+        sum+=abs(x[i]);
     }
-    else{
-        ans=false;
-    }
-
-}
- if(ans)yes;
- else no;
-    
-   
+    cout<<sum;
 }
