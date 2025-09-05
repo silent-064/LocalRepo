@@ -18,23 +18,5 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int a, i;
-   string s1="WUB";
-   string s2="";
-   string sh;
-   cin>>sh;
-   bool ans=true;
-size_t pos;
-   while((pos=sh.find(s1))!=string::npos){
-sh.replace(pos,s1.length()," ");
+    cout<<"We want national level IUPC in CoU";
 }
-stringstream ss(sh);
-string w,r;
-while(ss>>w){
-      if (!r.empty()) r+= " ";
-    r+= w;
-}
-
-cout<<r;
-   }
-   

@@ -13,28 +13,25 @@
 const ll INF = 1e9 + 7;
 const ll mod = 998244353;
 using namespace std;
+void solve(){
+    ll b,i; cin >> b;
+        ll ans = 1;
+        for (i = 2; i < b; i++) ans *= i; 
+        cout << ans <<endl;
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int a, i;
-   string s1="WUB";
-   string s2="";
-   string sh;
-   cin>>sh;
-   bool ans=true;
-size_t pos;
-   while((pos=sh.find(s1))!=string::npos){
-sh.replace(pos,s1.length()," ");
-}
-stringstream ss(sh);
-string w,r;
-while(ss>>w){
-      if (!r.empty()) r+= " ";
-    r+= w;
-}
+    cin >> a;
+    while (a--)
+    {
 
-cout<<r;
-   }
-   
+solve();
+
+
+
+    }
+}
