@@ -1,0 +1,63 @@
+/*
+ * Author : Protic Prappo Durjoy
+ * Date :
+ */
+#include <bits/stdc++.h>
+#define endl "\n"
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+#define ft float
+#define du double
+#define ull unsigned long long
+#define ll long long
+const ll INF = 1e9 + 7;
+const ll mod = 998244353;
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll a, i;
+    string s1;
+    cin>>s1;
+    ll x=s1.size()-1;
+    if(s1[0]!='-'){
+        cout<<s1;
+    }
+    else{
+        if (s1[x]>s1[x-1])
+        {
+        s1.erase(x,1);
+        }
+        else{
+ s1.erase(x-1,1);
+        }
+        ll y=s1.size()-1;
+        if(s1.size()==2 && s1[y]=='0')
+        {
+            s1.erase(y-1,1);
+            cout<<s1;
+        }
+        else{
+            cout<<s1;
+        }
+        
+    }
+    // ll maxu=0
+    // cin >> a;
+    // if(a>0)cout<<a;
+    // else{
+    //     ll b=a;
+    //     i=2;
+
+    //     while(i--)
+    //     {
+    //         b=b%10;
+    //         maxu=max(b,maxu);
+    //         b/=10;
+    //     }
+
+    // }
+    
+}
