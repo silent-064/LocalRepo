@@ -48,21 +48,50 @@ void clearBitsInRange(int &a,int i,int j)
 }
 void replacebits(int &a,int i,int j,int m)
 {
-    clearBitsInRange(a,i,j)
+    clearBitsInRange(a,i,j);
     int mask=m<<i;
 a=a|mask;
 cout<<a;
+}
+void countbits(int &a)
+{ll cnt=0;
+    while(a>0)
+    {
+cnt+=(a&1);
+a=a>>1;
+    }
+cout<<cnt;
+}
+int count_bits_hack(int &a)
+{
+    ll cnt=0;
+    while(a>0)
+    {
+        a=a&(a-1);
+        cnt++;
+    }
+}
+void convert_into_binary(int &a)
+{
+    ll ans=0;
+    ll p=1;
+    while(a>0)
+    {ll lastbit=(a&1);
+        ans+=p*lastbit;
+        p*=10;
+        a=a>>1;
+
+    }
+    cout<<ans;
 }
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int a,b,i,j;
-    a=31;
-    i=1;
-    j=3;  
-
+    int a=10;
+    //countbits(a);
+convert_into_binary(a);
     
   
 
