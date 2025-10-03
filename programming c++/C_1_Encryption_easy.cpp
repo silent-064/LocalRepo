@@ -1,0 +1,35 @@
+/*
+ * Author : Protic Prappo Durjoy
+ * Date :
+ */
+#include <bits/stdc++.h>
+#define endl "\n"
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+#define ft float
+#define du double
+#define ull unsigned long long
+#define ll long long
+const ll INF = 1e9 + 7;
+const ll mod = 998244353;
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int a, i,b;
+    cin >> a>>b;
+    vector<ll>x(a);
+    ll ans1,ans=0,ans2;
+    for(i=0; i<a; i++)
+    {
+        cin>>x[i];
+        ans+=x[i];
+    }
+    ans1=(ans-x[0]-x[1])%b;
+    ans2=(x[0]+x[1])%b;
+    cout<<ans1+ans2;
+
+
+}
