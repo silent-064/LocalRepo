@@ -22,43 +22,26 @@ int main()
     cin >> a;
     while (a--)
     {
-ll b,c;
-cin>>b>>c;
-vector<ll>x;
-ll cnt=0;
+ll b;
+cin>>b;
+vector<ll>x(b);
 for(i=0; i<b; i++)
 {
-    ll y;
-    cin>>y;
-    //if(y<=c){
-        x.push_back(y);
-    //}
-    // else{
-    //     cnt++;
-    // }
-
+    cin>>x[i];
 }
-// if(x.empty()){
-//     cout<<cnt<<endl;
-//     continue;
-// }
-
-sort(x.begin(),x.end(),greater<ll>());
-ll y=1;
-for(i=0; i<x.size(); i++)
+bool ans=true;
+ll minu=x[0];
+for(i=0; i<b; i++)
 {
- if(x[i]*y<=c)y*=2;
- else{
-    cnt++;
- }
-//    //cout<<y<<endl;
-//    // if(y>c)cnt++;
-//     else{
-//           y=x[i]*(1LL<<i);
-//     }
-
+    ll n=(x[i]/2)+1;
+    if(n>minu)ans=false;
+    else{
+        minu=min(minu,x[i]);
+    }
 }
-cout<<cnt<<endl;
+if(ans)yes;
+else no;
+
 
 
     }
