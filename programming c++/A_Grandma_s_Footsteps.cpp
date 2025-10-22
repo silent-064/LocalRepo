@@ -28,22 +28,25 @@ int main()
     {
       if(i%2!=0)
       { 
-        if(x/a>=0)
+        if(x>=a)
         {
 calc=s*a;
-sum+=calc;
+sum+=calc; 
+x=x-a;
         }
         else{
             calc=x*s;
             sum+=calc;
+            x=0;
         }
         
-              calc=1;
-              x=x-a;
+              //calc=1;
+        
       }
       else{
 x=x-b;
       }
+      i++;
 
     }
 cout<<sum<<endl;
