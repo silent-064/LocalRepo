@@ -18,28 +18,19 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int a, i;
-    cin >> a;
-    while (a--)
-    {
-ll b;
-cin>>b;
-vector<ll>x(b);
-map<ll,ll>freq;
-for(i=0; i<b; i++)
-{
-    cin>>x[i];
-    freq[x[i]]++;
-}
-for(i=0; i<b; i++)
-{
-    ll y;
-    cin>>y;
-    freq[y]++;
-}
-
-
-
-
+    int a,b, i;
+    cin >> a>>b;
+    while(b>0 && a>0){
+        cout<<"OK"<<endl;
+        b--;a--;
     }
+    ll c=(a-b);
+
+    if(c>0){
+        while(c--){
+            cout<<"Too Many Requests"<<endl;
+        } 
+    }
+   
+
 }

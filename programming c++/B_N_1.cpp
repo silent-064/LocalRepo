@@ -18,28 +18,31 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int a, i;
-    cin >> a;
-    while (a--)
-    {
-ll b;
-cin>>b;
+    int a,i;
+ll b,c;
+cin>>b>>c;
 vector<ll>x(b);
-map<ll,ll>freq;
+ll sum=0;
 for(i=0; i<b; i++)
 {
     cin>>x[i];
-    freq[x[i]]++;
+    sum+=x[i];
 }
+ll n=sum-c;
+bool ans=false;
 for(i=0; i<b; i++)
 {
-    ll y;
-    cin>>y;
-    freq[y]++;
-}
-
-
-
-
+    if(n==x[i])
+    {
+        ans=true;
+        break;
     }
+}
+if(ans)cout<<"Yes"<<endl;
+else{cout<<"No"<<endl;}
+
+
+
+
+    
 }
