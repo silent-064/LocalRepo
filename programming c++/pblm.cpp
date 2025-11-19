@@ -20,27 +20,20 @@ int main()
     cout.tie(NULL);
     int a, i;
     cin >> a;
-    while (a--)
-    {
-ll b,c,j;
-cin>>b>>c;//b--n,c==m
-vector<vector<ll>>x(c,vector<ll>(b));
-for(i=0; i<b; i++){
-    for(j=0; j<c; j++){
-        cin>>x[j][i];
-    }
+    while(a--){
+string s1;
+cin>>s1;
+ll cnt=0;
+bool ans=true;
+bool ok=false;
+//char c=' \ ';
+for(i=0; i<s1.size(); i++){
+if(s1[i]=='\\' && s1[i+1]=='0' && i+1<s1.size()){
+    ans=false;
+    break;
 }
-for(i=0; i<c; i++){
-    sort(x[i].begin(),x[i].end());
+cnt++;
 }
-ll ans=0;
-for(i=0; i<c; i++){
-for(j=0; j<b; j++){
-ans-=(x[i][j]*(b-j-1));
-ans+=(x[i][j]*j);
-}
-}
-cout<<ans<<endl;
-
+cout<<s1.size()<<" "<<cnt<<endl;
     }
 }

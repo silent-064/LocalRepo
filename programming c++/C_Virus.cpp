@@ -22,25 +22,36 @@ int main()
     cin >> a;
     while (a--)
     {
-ll b,c,j;
-cin>>b>>c;//b--n,c==m
-vector<vector<ll>>x(c,vector<ll>(b));
-for(i=0; i<b; i++){
-    for(j=0; j<c; j++){
-        cin>>x[j][i];
-    }
-}
+ll b,c;
+cin>>b>>c;
+vector<ll>x(c);
 for(i=0; i<c; i++){
-    sort(x[i].begin(),x[i].end());
+    cin>>x[i];
 }
+sort(x.begin(),x.end());
+priority_queue<ll>pq;
+// pq.push(x[0]-2);
+// pq.push(x[c-1]-2);
+ll d=(b-x[c-1]+x[0]-1);
+pq.push(d);
+for(i=1; i<c; i++){
+    pq.push(x[i]-x[i-1]-1);
+}
+ll cnt=0;
 ll ans=0;
-for(i=0; i<c; i++){
-for(j=0; j<b; j++){
-ans-=(x[i][j]*(b-j-1));
-ans+=(x[i][j]*j);
+while(!pq.empty()){
+    ll y=pq.top();
+    pq.pop();
+    if(y>2*cnt){
+        ll z=y-2*cnt;
+        if(z>1)ans+=z-1;
+        else{
+            ans+=z;
+        }
+    }
+    cnt+=2;
 }
-}
-cout<<ans<<endl;
+cout<<b-ans<<endl;
 
     }
 }

@@ -13,6 +13,21 @@
 const ll INF = 1e9 + 7;
 const ll mod = 998244353;
 using namespace std;
+ll power(ll base,ll p){
+ll ans=1;
+while(p){
+ if(p%2==1){
+    ans=(ans*base)%INF;
+    p--;
+
+ }   
+ else{
+    base=(base*base)%INF;
+    p/=2;
+ }
+}
+return ans%INF;
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -22,25 +37,12 @@ int main()
     cin >> a;
     while (a--)
     {
-ll b,c,j;
-cin>>b>>c;//b--n,c==m
-vector<vector<ll>>x(c,vector<ll>(b));
-for(i=0; i<b; i++){
-    for(j=0; j<c; j++){
-        cin>>x[j][i];
-    }
-}
-for(i=0; i<c; i++){
-    sort(x[i].begin(),x[i].end());
-}
-ll ans=0;
-for(i=0; i<c; i++){
-for(j=0; j<b; j++){
-ans-=(x[i][j]*(b-j-1));
-ans+=(x[i][j]*j);
-}
-}
-cout<<ans<<endl;
+ll n,k;
+cin>>n>>k;
+cout<<power(n,k)<<endl;
+
+
+
 
     }
 }

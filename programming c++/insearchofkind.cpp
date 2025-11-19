@@ -20,27 +20,37 @@ int main()
     cout.tie(NULL);
     int a, i;
     cin >> a;
+    ll v=1;
     while (a--)
     {
-ll b,c,j;
-cin>>b>>c;//b--n,c==m
-vector<vector<ll>>x(c,vector<ll>(b));
+ll b;
+cin>>b;
+vector<ll>x(b);
+ll j=1;
 for(i=0; i<b; i++){
-    for(j=0; j<c; j++){
-        cin>>x[j][i];
+cin>>x[i];
+}
+ll bigu=x[0];
+bool ok=false;
+for(i=1; i<b; i++)
+{
+    if(bigu<x[i] && ok){
+        bigu=x[i];
+        j=i+1;
+        ok=false;
+        continue;
+    }
+    else if(bigu>=x[i]){
+        j=0;
+        ok=true;
     }
 }
-for(i=0; i<c; i++){
-    sort(x[i].begin(),x[i].end());
+if(j==0)cout<<"Case "<<v<<": Humanity is doomed!"<<endl;
+else{
+cout<<"Case "<<v<<": "<<j<<endl;
 }
-ll ans=0;
-for(i=0; i<c; i++){
-for(j=0; j<b; j++){
-ans-=(x[i][j]*(b-j-1));
-ans+=(x[i][j]*j);
-}
-}
-cout<<ans<<endl;
+v++;
+
 
     }
 }

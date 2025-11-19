@@ -22,25 +22,33 @@ int main()
     cin >> a;
     while (a--)
     {
-ll b,c,j;
-cin>>b>>c;//b--n,c==m
-vector<vector<ll>>x(c,vector<ll>(b));
-for(i=0; i<b; i++){
-    for(j=0; j<c; j++){
-        cin>>x[j][i];
+ll n;
+cin>>n;
+set<ll>x;
+vector<ll>b(n);
+for(i=0; i<n; i++){
+    //ll b;
+cin>>b[i];
+x.insert(b[i]);
+}ll y;
+if(x.size()==1){
+    no;
+}
+else{
+    yes;
+    for(i=0; i<n; i++){
+        if(b[i]!=b[0]){
+            cout<<1<<" "<<i+1<<endl;
+            y=i+1;
+        }
+    }
+    for(i=1; i<n; i++){
+        if(b[i]==b[0]){
+            cout<<y<<" "<<i+1<<endl;
+        }
     }
 }
-for(i=0; i<c; i++){
-    sort(x[i].begin(),x[i].end());
-}
-ll ans=0;
-for(i=0; i<c; i++){
-for(j=0; j<b; j++){
-ans-=(x[i][j]*(b-j-1));
-ans+=(x[i][j]*j);
-}
-}
-cout<<ans<<endl;
+
 
     }
 }

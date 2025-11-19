@@ -22,25 +22,20 @@ int main()
     cin >> a;
     while (a--)
     {
-ll b,c,j;
-cin>>b>>c;//b--n,c==m
-vector<vector<ll>>x(c,vector<ll>(b));
-for(i=0; i<b; i++){
-    for(j=0; j<c; j++){
-        cin>>x[j][i];
-    }
+ll n,m;
+cin>>n>>m;
+//vector<ll>x(n),x(m);
+for(i=0; i<n; i++){
+  ll x;
+    cin>>x[i];
 }
-for(i=0; i<c; i++){
-    sort(x[i].begin(),x[i].end());
+for(i=0; i<m; i++){
+    ll x,y,z;
+    cin>>x>>y>>z;
 }
-ll ans=0;
-for(i=0; i<c; i++){
-for(j=0; j<b; j++){
-ans-=(x[i][j]*(b-j-1));
-ans+=(x[i][j]*j);
-}
-}
-cout<<ans<<endl;
+
+cout<<n+m<<endl;
+
 
     }
 }
