@@ -24,28 +24,15 @@ int main()
     {
 ll n;
 cin>>n;
-vector<ll>arr(n);
-for(i=0; i<n; i++){
-    cin>>arr[i];
+ll ans=(n/4)+1;
+if(n%2==0){
+    cout<<ans<<endl;
 }
-ll freq[33]={0};
-for(i=0; i<n;i++){
-    ll cnt=0;
-    ll temp=arr[i];
-    while(temp>0){
+else{
+    cout<<0<<endl;
+}
 
-        temp/=2;
-        cnt++;
-    }
-    freq[cnt]++;
-}
-ll ans=0;
-for(i=0; i<=32; i++){
-    if(freq[i]>=2){
-ans+=((freq[i]*(freq[i]-1))/2);
-    }
-}
-cout<<ans<<endl;
+
 
     }
 }

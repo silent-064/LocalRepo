@@ -18,34 +18,8 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int a, i;
-    cin >> a;
-    while (a--)
-    {
-ll n;
-cin>>n;
-vector<ll>arr(n);
-for(i=0; i<n; i++){
-    cin>>arr[i];
-}
-ll freq[33]={0};
-for(i=0; i<n;i++){
-    ll cnt=0;
-    ll temp=arr[i];
-    while(temp>0){
-
-        temp/=2;
-        cnt++;
-    }
-    freq[cnt]++;
-}
-ll ans=0;
-for(i=0; i<=32; i++){
-    if(freq[i]>=2){
-ans+=((freq[i]*(freq[i]-1))/2);
-    }
-}
-cout<<ans<<endl;
-
-    }
+    ll  a,b, i;
+    cin >> a >>b;
+cout<<a+b<<endl;
+   
 }

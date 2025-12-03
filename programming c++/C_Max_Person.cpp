@@ -22,30 +22,25 @@ int main()
     cin >> a;
     while (a--)
     {
-ll n;
-cin>>n;
-vector<ll>arr(n);
-for(i=0; i<n; i++){
-    cin>>arr[i];
-}
-ll freq[33]={0};
-for(i=0; i<n;i++){
-    ll cnt=0;
-    ll temp=arr[i];
-    while(temp>0){
-
-        temp/=2;
+ll n,m;
+cin>>n>>m;
+i=1;
+ll cnt=0;
+bool ok=true;
+while(ok){
+   ll pow=n*((1LL<<i));
+    if(pow<=m){
         cnt++;
     }
-    freq[cnt]++;
-}
-ll ans=0;
-for(i=0; i<=32; i++){
-    if(freq[i]>=2){
-ans+=((freq[i]*(freq[i]-1))/2);
+    else{
+        ok=false;
     }
+    i++;
 }
-cout<<ans<<endl;
+cout<<n*cnt<<endl;
+
+
+
 
     }
 }

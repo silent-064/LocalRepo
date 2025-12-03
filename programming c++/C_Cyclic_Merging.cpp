@@ -28,24 +28,17 @@ vector<ll>arr(n);
 for(i=0; i<n; i++){
     cin>>arr[i];
 }
-ll freq[33]={0};
-for(i=0; i<n;i++){
-    ll cnt=0;
-    ll temp=arr[i];
-    while(temp>0){
-
-        temp/=2;
-        cnt++;
-    }
-    freq[cnt]++;
+ll ans=0,maxu=0;
+ll c=0;
+for(i=0; i<n; i++){
+c=max(arr[i],arr[(i+1)%n]);
+ans+=c; 
+maxu=max(c,maxu);
 }
-ll ans=0;
-for(i=0; i<=32; i++){
-    if(freq[i]>=2){
-ans+=((freq[i]*(freq[i]-1))/2);
-    }
-}
+ans-=maxu;
 cout<<ans<<endl;
+
+
 
     }
 }

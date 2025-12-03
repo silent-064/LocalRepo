@@ -1,0 +1,1 @@
+{"name":"Local: summmmm","url":"c:\\Users\\silent-064\\LocalRepo\\programming c++\\summmmm.cpp","tests":[{"id":1764090838343,"input":"1 2","output":"3"},{"id":1764090848451,"input":"7 10","output":"17"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\silent-064\\LocalRepo\\programming c++\\summmmm.cpp","group":"local","local":true}

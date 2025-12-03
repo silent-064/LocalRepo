@@ -24,28 +24,22 @@ int main()
     {
 ll n;
 cin>>n;
-vector<ll>arr(n);
-for(i=0; i<n; i++){
-    cin>>arr[i];
-}
-ll freq[33]={0};
-for(i=0; i<n;i++){
-    ll cnt=0;
-    ll temp=arr[i];
-    while(temp>0){
-
-        temp/=2;
-        cnt++;
-    }
-    freq[cnt]++;
-}
+vector<ll>a1(n),b1(n),c1(n);
+for(i=0; i<n; i++)cin>>a1[i];
+for(i=0; i<n; i++)cin>>b1[i];
+for(i=0; i<n; i++)cin>>c1[i];
+ll cnt=1;
 ll ans=0;
-for(i=0; i<=32; i++){
-    if(freq[i]>=2){
-ans+=((freq[i]*(freq[i]-1))/2);
-    }
+i=0;
+while(i<n){
+    cnt*=a1[i];
+    if(cnt%2==0)ans+=b1[i];
+    else if(cnt%2!=0)ans+=c1[i];
+    i++;
 }
 cout<<ans<<endl;
+
+
 
     }
 }
