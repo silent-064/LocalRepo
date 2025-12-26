@@ -1,61 +1,43 @@
-
-// just copy from solution for just try..
-#include <bits/stdc++.h>
-#define endl "\n"
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
-#define ft float
-#define du double
-#define ll long long
-#define ull unsigned long long
+#include<bits/stdc++.h>
 using namespace std;
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int t;
-    cin >> t;
-    while (t--) {
-        ll n;
-        cin >> n;
-        vector<ll> a(n);
-        for (ll i = 0; i < n; i++) cin >> a[i];
-
-        ll curr_sum = 0, max_sum = 0, last = 0;
-        ll count_neg = 0;
-
-        for (ll i = 0; i < n; i++) {
-            if (a[i] == -1) {
-                count_neg++;
-                max_sum = max(max_sum, curr_sum + count_neg * 1000000000);
-            } else {
-                if (count_neg == 0) {
-                    if (curr_sum == 0)
-                        curr_sum = a[i];
-                    else if (last <= a[i])
-                        curr_sum += a[i];
-                    else
-                        curr_sum = a[i];
-                } else {
-                    if (last <= a[i]) {
-                        curr_sum += count_neg * a[i] + a[i];
-                    } else {
-                        curr_sum = count_neg * a[i] + a[i];
-                    }
-                    count_neg = 0;
-                }
-                max_sum = max(max_sum, curr_sum);
-                last = a[i];
-            }
-        }
-
-        if (count_neg > 0) {
-            max_sum = max(max_sum, curr_sum + count_neg * 1000000000);
-        }
-
-        cout << max_sum << "\n";
+int main(){
+int t;
+cin>>t;
+while(t--){
+    int n;
+    cin>>n;
+    long long a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
     }
+   vector<long long>b;
+   b.push_back(a[0]);
+   long long s=0,f=0;
+   for(int i=1;i<n;i++){
+        if(a[i]==-1){
+                a[i]=1000000000;
+        }
+    if(a[i-1]<=a[i]&&f==0){
+            s+=a[i]+a[i-1];
+   f=1;
+            }else if(a[i-1]<=a[i]){
+            s+=a[i];
+            }else{
+    b.push_back(s);
+    s=0;
+    f=0;
+    }
+   }
+   if(s!=0){
+    b.push_back(s);
+    s=0;
+   }
+   for(int i=0;i<b.size();i++){
+    s+=b[i];
+   }
+   sort(b.begin(),b.end());
+   cout<<b[b.size()-1]<<endl;
+}
 
-    return 0;
+
 }

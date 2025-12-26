@@ -1,0 +1,1 @@
+{"name":"Local: graph2","url":"c:\\Users\\silent-064\\LocalRepo\\programming c++\\graph2.cpp","tests":[{"id":1765045869702,"input":"8 6\n1 2\n2 3\n2 4\n3 5\n6 7\n1 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\silent-064\\LocalRepo\\programming c++\\graph2.cpp","group":"local","local":true}
