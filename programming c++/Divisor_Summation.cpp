@@ -13,6 +13,16 @@
 const ll INF = 1e9 + 7;
 const ll mod = 998244353;
 using namespace std;
+ll n=1e6+7;
+ll arr[1000007];
+void solve(){
+    ll i,j;
+    for(i=1; i<=n; i++){
+        for(j=i; j<=n; j+=i){
+            arr[j]+=i;
+        }
+    }
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -20,23 +30,14 @@ int main()
     cout.tie(NULL);
     int a, i;
     cin >> a;
+    solve();
     while (a--)
     {
-ll n;
-cin>>n;
-vector<ll>div;
-for(i=1; i*i<=n; i++){
-    if(n%i==0){
-        div.push_back(i);
-        if(n/i!=i)div.push_back(n/i);
-    }
-}
-cout<<n<<endl;
-for(auto it:div){
-    cout<<it<<" ";
-  
-}
-cout<<endl;
+ll b;
+cin>>b;
+cout<<arr[b]-b<<endl;
+
+
 
 
     }

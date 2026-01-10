@@ -18,12 +18,12 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int a, i;
-    cin >> a;
-    while (a--)
-    {
-ll n;
-cin>>n;
+    ll  a, i;
+    //cin >> a;
+    //while (a--)
+    //{
+ll n,k;
+cin>>n>>k;
 vector<ll>div;
 for(i=1; i*i<=n; i++){
     if(n%i==0){
@@ -31,13 +31,18 @@ for(i=1; i*i<=n; i++){
         if(n/i!=i)div.push_back(n/i);
     }
 }
-cout<<n<<endl;
-for(auto it:div){
-    cout<<it<<" ";
+sort(div.begin(),div.end());
+// cout<<n<<endl;
+// for(auto it:div){
+//     cout<<it<<" ";
   
+// }
+//cout<<endl;
+if(div.size()>=k){
+    cout<<div[k-1]<<endl;
 }
-cout<<endl;
+else cout<<-1<<endl;
 
 
-    }
+    //}
 }

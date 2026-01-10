@@ -13,6 +13,7 @@
 const ll INF = 1e9 + 7;
 const ll mod = 998244353;
 using namespace std;
+ll n=1e6+7;
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -22,21 +23,29 @@ int main()
     cin >> a;
     while (a--)
     {
-ll n;
-cin>>n;
-vector<ll>div;
-for(i=1; i*i<=n; i++){
-    if(n%i==0){
-        div.push_back(i);
-        if(n/i!=i)div.push_back(n/i);
+vector<ll>spf(n+1,0);
+for(i=2; i<=n; i++){
+    if(spf[i]==0){
+        spf[i]=i;
+        if(i*i<=n){
+            for(ll j=i*i; j<=n; j+=i){
+                if(spf[j]==0){
+                    spf[j]=i;
+                }
+            }
+        }
     }
 }
-cout<<n<<endl;
-for(auto it:div){
-    cout<<it<<" ";
-  
-}
-cout<<endl;
+while (x > 1) { 
+        sum+=spf[x];
+        cout << spf[x]; 
+        x /= spf[x];
+       
+        if (x > 1) cout << " * ";
+    }
+    cout << '\n';
+
+
 
 
     }

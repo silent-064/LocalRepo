@@ -24,19 +24,9 @@ int main()
     {
 ll n;
 cin>>n;
-vector<ll>div;
-for(i=1; i*i<=n; i++){
-    if(n%i==0){
-        div.push_back(i);
-        if(n/i!=i)div.push_back(n/i);
-    }
-}
-cout<<n<<endl;
-for(auto it:div){
-    cout<<it<<" ";
-  
-}
-cout<<endl;
+
+
+
 
 
     }

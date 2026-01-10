@@ -39,12 +39,14 @@ for(i=2; i<=n; i++){
  for (int i = 1; i <= 5; ++i) {
          cout << "SPF(" << i << ") = " << spf[i] << '\n';
      }
-int x = 84;
+int x;
+cin>>x;
     cout << "\nFactorization of " << x << " : ";
     ll sum=0;
+      //cout << spf[x];
     while (x > 1) { 
         //sum+=spf[x];
-        cout << spf[x];
+        cout << spf[x]; 
         x /= spf[x];
        
         if (x > 1) cout << " * ";

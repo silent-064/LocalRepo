@@ -18,26 +18,41 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int a, i;
+    ll a, i;
     cin >> a;
+    ll n=1;
     while (a--)
     {
-ll n;
-cin>>n;
+ll p,l;
+cin>>p>>l;
+ll need=p-l;
+if(need<=l){cout<<"Case "<<n<<": impossible"<<endl;}
+else{
 vector<ll>div;
-for(i=1; i*i<=n; i++){
-    if(n%i==0){
-        div.push_back(i);
-        if(n/i!=i)div.push_back(n/i);
+for(i=1; i*i<=need; i++){
+    if(need%i==0){
+        if(i>l)
+        {div.push_back(i);}
+        if(need/i!=i)
+        {
+            if(need/i>l)
+            {div.push_back(need/i);}}
     }
 }
-cout<<n<<endl;
+sort(div.begin(),div.end());
+
+//cout<<n<<endl;
+if(div.empty()){cout<<"Case "<<n<<": impossible"<<endl;}
+else{
+    cout<<"Case "<<n<<": ";
 for(auto it:div){
     cout<<it<<" ";
   
 }
-cout<<endl;
+cout<<endl;}}
+n++;
 
+    
 
     }
 }
