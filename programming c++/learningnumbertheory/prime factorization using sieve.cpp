@@ -16,7 +16,7 @@ int32_t main() {
   }
   int q; cin >> q; // queries q <= 1e6
   while (q--) {
-    int n; cin >> n; // find prime factorization of n <= 1e6
+    int n; cin >>n; // find prime factorization of n <= 1e6
     vector<int> ans;
     while (n > 1) {
       ans.push_back(spf[n]);
